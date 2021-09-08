@@ -1,0 +1,35 @@
+ALGORITHM checkpoint
+
+VAR
+sentence: string;
+j,i,w,v,k:integer;
+L: ARRAY_OF_CHAR[5];
+BEGIN
+READ(sentence)
+j:=0;
+FOR i FROM 0 TO pos(".", sentence) STEP DO
+j:=j+1;
+END_FOR
+WRITE(j)
+
+
+FOR i FROM 0 TO sentence.length STEP DO
+w:=0
+IF (sentence[i] = " ") DO
+w:=w+1;
+END_FOR
+WRITE(w)
+
+L:={"a", "e", "i", "o", "u", "y"}
+READ(L)
+v:=0;
+FOR i FROM 0 TO sentence.length STEP DO
+FOR k FROM 0 TO 5 STEP DO 
+IF ( sentence[i] = L[k]) DO 
+v:=v+1;
+END_FOR
+END_FOR
+WRITE(v)
+
+
+END
